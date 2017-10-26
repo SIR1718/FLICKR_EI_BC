@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div id = "control">
+	<input type="text" id="intext" name="">
+	<button id="bget"> Get Photos</button>
+	<button id="bclean"> Clean Photos</button>
+</div>
+<div id="content">
+	
+</div>
+</body>
+<script type="text/javascript">
+	/* 
+	https://api.flickr.com/services/rest/?
+	method=flickr.photos.search&
+	api_key=438673730f7346239b3dcfab716b16fb&
+	text=bananas&
+	extras=url_q&
+	per_page=5&
+	format=json&
+	nojsoncallback=1
+	*/
+
+
+	url_base = "https://api.flickr.com/services/rest/?";
+	fmethod  = "method=flickr.photos.search";
+	fapikey  = "api_key=438673730f7346239b3dcfab716b16fb";
+	fperpage = "per_page=5";
+	fformat  = "format=json";
+	fcallback= "nojsoncallback=1";
+	fextras  = "extras=url_q";
+
+	divcontent = document.getElementById("content");
+
+
+
+	bget = document.getElementById("bget");
+	bget.addEventListener("click", getPhotos);
+
+	bclean = document.getElementById("bclean");
+	bclean.addEventListener("click",cleanPhotos);
+
+	function cleanPhotos() {
+		divcontent.innerHTML = "";
+	}
+
+	function getPhotos() {
+
+		intext = document.getElementById("intext");
+		intextStr = intext.value;
+		console.log(intextStr);
+	}
+
+
+
+</script>
+</html>
